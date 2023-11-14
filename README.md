@@ -2,10 +2,11 @@
 
 
 ### Usage of nn_classifier.py
-This Python script loads one reference dataset and one test dataset both provided by the user.
+This Python script loads one reference dataset and one test dataset both provided by the user. 
+The reference marker genes can be optionally provided.
 It selects overlapped genes and trains a neural network model as a cell-type classifier based on the reference dataset.
 Then it predicts the cell-type probabilities and extracts features of the test dataset.
-Finally, it evaluates the model using samples from the test dataset by SHAP analysis.
+Finally, it optionally evaluates the model using samples from the test dataset by SHAP analysis.
 
 ```
 $ python nn_classifier.py [ref_name] [ref_directory] [ref_class_col] [test_name] [test_directory] --marker [filename] --shap
