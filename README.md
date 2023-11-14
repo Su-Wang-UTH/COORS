@@ -7,7 +7,7 @@ The reference cell-type **column** needs to be designated.
 The reference **_marker_** genes can be _optionally_ provided.
 Overlapped genes are selected and a neural network model is trained as a cell-type classifier based on the reference dataset.
 Then the model predicts the cell-type probabilities and extracts features of the test dataset.
-At last, the model is _optionally_ evaluated using samples from the test dataset by **`SHAP`** analysis.
+At last, the model is _optionally_ evaluated using samples from the test dataset by `SHAP` analysis.
 
 ```
 $ python nn_classifier.py [ref_name] [ref_directory] [ref_class_col] [test_name] [test_directory] --marker [filename] --shap
