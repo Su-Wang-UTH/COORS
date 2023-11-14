@@ -6,7 +6,7 @@ This Python script loads one reference dataset and one test dataset both provide
 The reference marker genes can be optionally provided.
 It selects overlapped genes and trains a neural network model as a cell-type classifier based on the reference dataset.
 Then it predicts the cell-type probabilities and extracts features of the test dataset.
-Finally, it optionally evaluates the model using samples from the test dataset by SHAP analysis.
+At last, it optionally evaluates the model using samples from the test dataset by SHAP analysis.
 
 ```
 $ python nn_classifier.py [ref_name] [ref_directory] [ref_class_col] [test_name] [test_directory] --marker [filename] --shap
