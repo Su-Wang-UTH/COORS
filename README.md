@@ -13,7 +13,7 @@ $ python nn_classifier.py [ref_name] [ref_directory] [ref_class_col] [test_name]
 
 Example 1: Use cerebellum as reference and medulloblastoma as test, with reference marker genes provided, opt to run SHAP
 ```
-$ python nn_classifier.py cerebellum developing_human_cerebellum CellType medulloblastoma medulloblastoma --marker CellTypeMarker_DevelopingHumanData.xlsx --shap
+$ python nn_classifier.py cerebellum cerebellum CellType medulloblastoma medulloblastoma -m CellTypeMarker_DevelopingHumanData.xlsx -s
 ```
 
 Example 2: Use codex as reference and glioma as test, with reference marker genes provided, not to run SHAP
@@ -21,7 +21,7 @@ Example 2: Use codex as reference and glioma as test, with reference marker gene
 $ python nn_classifier.py codex codex CellType glioma glioma -m codex_cluster_markers.xlsx
 ```
 
-Example 3: Use bhaduri as reference and DIPG as test, reference marker genes not provided, opt to run SHAP
+Example 3: Use bhaduri as reference and DIPG as test, without reference marker genes, opt to run SHAP
 ```
 $ python nn_classifier.py bhaduri bhaduri CellType DIPG DIPG -s
 ```
