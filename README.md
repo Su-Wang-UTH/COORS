@@ -9,7 +9,7 @@ Finally, it evaluates the model using samples from the test dataset by SHAP.
 
 ```
 $ python nn_classifier.py [ref_name] [ref_directory] [ref_class_col] [test_name] [test_directory] --marker [filename] --shap
-```
+```  
   
 Example 1: Use cerebellum as reference and meningioma as test, with reference marker genes provided, opt to run SHAP
 ```
