@@ -1,11 +1,12 @@
 # COORS
 **COORS** (**C**ell **O**f **OR**igin like Cell**S**) is a computational tool trained on developmental human brain single-cell datasets, enabling annotation of developmental-like cell states in brain tumor cells. COORS can be applied to various brain cancer datasets, including medulloblastoma and glioma, to uncover developmental-like cells and potential therapeutic targets.
 
-![Figure 1](Figure1.pdf)
 
 ## Model Description
 COORS uses cell-type transcriptional annotation using machine-learned neural network models (NNMs). COORS NNMs are trained from  previously published scRNA-seq developing human brain datasets (totaling ~1M cells), such as developing human neocortical and cerebellum scRNA-seq data.
-  
+
+![Figure1](Figure1.png)
+
 The overall workflow of COORS consists of two steps. In the initial step, we train neural network models for cell of origin classification and cell age regression using developing brain scRNA-seq datasets. Assuming we have reference data with two cell origins, A and B, we train a neural network-based cell of origin classifier using this reference data, saving the model in our repository. Concurrently, we train two neural network-based cell age regressors, one for cell origin A and another for cell origin B, also saving these trained models in the repository.  
 
 In the second step, we map scRNA-seq tumor cells to developing healthy brain cells by using the pre-trained models. We predict the cell of origin for the testing dataset using the pre-trained cell of origin classifier. For each cell of origin, we further predict cell age using the corresponding pre-trained cell age regressor. Additionally, we conduct **SH**apley **A**dditive ex**P**lanations (**SHAP**) analysis to extract essential features from our machine-learning neural network models, identifying tumor-specific developmental-like gene markers for each cell type and age within our training datasets.
