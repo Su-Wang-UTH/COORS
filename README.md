@@ -1,6 +1,8 @@
 # COORS
 **COORS** (**C**ell **O**f **OR**igin like Cell**S**) is a computational tool trained on developmental human brain single-cell datasets, enabling annotation of developmental-like cell states in brain tumor cells. COORS can be applied to various brain cancer datasets, including medulloblastoma and glioma, to uncover developmental-like cells and potential therapeutic targets.
 
+[Figure1.pdf](https://github.com/Su-Wang-UTH/COORS/files/13368821/Figure1.pdf)
+
 ## Model Description
 COORS uses cell-type transcriptional annotation using machine-learned neural network models (NNMs). COORS NNMs are trained from  previously published scRNA-seq developing human brain datasets (totaling ~1M cells), such as developing human neocortical and cerebellum scRNA-seq data.
   
