@@ -13,7 +13,7 @@ In the second step, we map scRNA-seq tumor cells to developing healthy brain cel
 
 ## Application
 ### nn_classifier.py
-This Python script loads one **reference** dataset and one **test** dataset both provided by the user.
+This Python script loads one **reference** dataset and one **test** dataset both provided by the user.  
 The reference dataset `[ref_name]` should be in `[ref_directory]`. Same for the test dataset.  
 The reference cell-type **column name** needs to be provided with `[ref_class_col]` (e.g., CellType).  
 To be flexible, the model _optionally_ preprocesses both datasets by `--normalize_ref` and `--normalize_test`, which is up to the user depending on whether the provided data have already been preprocessed.  
