@@ -48,10 +48,10 @@ $ python nn_classifier.py bhaduri bhaduri CellType DIPG DIPG -s -r -t
   
 ### Note  
   
-**Sparse** or **dense** input  
+**Sparse** or **dense** input
 - nn_classifier.py accepts both **sparse** and **dense** scRNA-seq datasets as input.  
   
-**Filetype** and **filename**  
+**Filetype** and **filename**
 - nn_classifier.py accepts **.h5ad** file. **[ref_directory]** should contain **adata.h5ad** as reference. Same for **[test_directory]**.  
 - To be flexible, nn_classifier.py also accepts **.mtx** file. In this case, **[ref_directory]** should contain **genes.tsv**, **barcodes.tsv**, and **matrix.mtx** as reference. Same for **[test_directory]**.  
   
