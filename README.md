@@ -17,7 +17,7 @@ In the second step, we map scRNA-seq tumor cells to developing healthy brain cel
 - The reference dataset `[ref_name]` should be in `[ref_directory]`. Same for the test dataset.  
 - The reference cell-type **column name** needs to be provided with `[ref_class_col]` (e.g., CellType).  
 - To be flexible, the model _optionally_ preprocesses both datasets by `--normalize_ref` and `--normalize_test`, which is up to the user depending on whether the provided data have already been preprocessed.  
-- The reference **_marker_** genes can be _optionally_ provided with `--marker [marker_filename]`.  
+- The reference **_marker genes_** can be _optionally_ provided with `--marker [marker_filename]`.  
 - Overlapped genes are selected and a neural network model is trained as a cell-type classifier based on the reference dataset.  
 - Then the model predicts the cell-type probabilities and extracts features of the test dataset.  
 - At last, the model is _optionally_ evaluated by `--shap` analysis with samples from the test dataset.  
