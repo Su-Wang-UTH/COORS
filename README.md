@@ -25,12 +25,12 @@ At last, the model is _optionally_ evaluated by `SHAP` analysis with samples fro
 ```
 $ python nn_classifier.py [ref_name] [ref_directory] [ref_class_col] [test_name] [test_directory] --marker [filename] --shap --normalize_ref --normalize_test
 ```
-
+  
 **Equivalent to**
 ```
 $ python nn_classifier.py [ref_name] [ref_directory] [ref_class_col] [test_name] [test_directory] -m [filename] -s -r -t
 ```
-
+  
 **Example 1:** Using **cerebellum** as reference and **medulloblastoma** as test, **_with_** preprocessing needed, **_with_** reference marker genes provided, **_running_** `SHAP`
 ```
 $ python nn_classifier.py cerebellum cerebellum CellType medulloblastoma medulloblastoma -m CellTypeMarker_DevelopingHumanData.xlsx -s -r -t
@@ -45,17 +45,26 @@ $ python nn_classifier.py codex codex CellType glioma glioma -m codex_cluster_ma
 ```
 $ python nn_classifier.py bhaduri bhaduri CellType DIPG DIPG -s -r -t
 ```
-
-**Note**  
+  
+### Note  
+  
 **Sparse** or **dense** input  
-nn_classifier.py accepts both **sparse** and **dense** scRNA-seq datasets as input.  
-**File format** and **filename**  
+- nn_classifier.py accepts both **sparse** and **dense** scRNA-seq datasets as input.  
+  
+**Filetype** and **filename**  
 - nn_classifier.py accepts **.h5ad** file. **[ref_directory]** should contain **adata.h5ad** as reference. Same for **[test_directory]**.  
-- To be flexible, nn_classifier.py also accepts **.mtx** file. In this case, **[ref_directory]** should contain **genes.tsv**, **barcodes.tsv**, and **matrix.mtx** as reference. Same for **[test_directory]**.
+- To be flexible, nn_classifier.py also accepts **.mtx** file. In this case, **[ref_directory]** should contain **genes.tsv**, **barcodes.tsv**, and **matrix.mtx** as reference. Same for **[test_directory]**.  
+  
 **Metadata**  
-If **.mtx** is provided as reference, **[ref_directory]** should also contain **meta.tsv**, **meta.csv**, or **meta.xlsx** as metadata.
-
-
+- If **.mtx** is provided as reference, **[ref_directory]** should also contain **meta.tsv**, **meta.csv**, or **meta.xlsx** as metadata.
+  
+_Optional_ **marker genes**  
+- If provided, **[ref_directory]** should contain it. Filetype should be **.tsv**, **.csv**, or **.xlsx**. The column name of gene symbols should be **Gene**.  
+  
+**Column separator**  
+- All **.tsv** files should use `\t` as the separator.  
+- All **.csv** files should use `,` as the separator.  
+  
 ### age_predictor_fit.py
 
 
