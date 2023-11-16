@@ -13,23 +13,26 @@ In the second step, we map scRNA-seq tumor cells to developing healthy brain cel
 
 ## Application
 ### nn_classifier.py
-This Python script loads one **reference** dataset and one **test** dataset both provided by the user.  
+This Python script loads one **reference** dataset and one **test** dataset both provided by the user.
+The reference dataset `[ref_name]` should be in `[ref_directory]`. Same for the test dataset.  
+The reference cell-type **column name** needs to be provided with `[ref_class_col]` (e.g., CellType).  
 To be flexible, the model _optionally_ preprocesses both datasets by `--normalize_ref` and `--normalize_test`, which is up to the user depending on whether the provided data have already been preprocessed.  
-The reference cell-type **column** needs to be designated.  
-The reference **_marker_** genes can be _optionally_ provided.  
+The reference **_marker_** genes can be _optionally_ provided with `--marker [marker_filename]`.  
 Overlapped genes are selected and a neural network model is trained as a cell-type classifier based on the reference dataset.  
 Then the model predicts the cell-type probabilities and extracts features of the test dataset.  
-At last, the model is _optionally_ evaluated by `SHAP` analysis with samples from the test dataset.  
+At last, the model is _optionally_ evaluated by `--shap` analysis with samples from the test dataset.  
 
 **Usage**
 ```
-$ python nn_classifier.py [ref_name] [ref_directory] [ref_class_col] [test_name] [test_directory] --marker [filename] --shap --normalize_ref --normalize_test
+$ python nn_classifier.py [ref_name] [ref_directory] [ref_class_col] [test_name] [test_directory] --marker [marker_filename] --shap --normalize_ref --normalize_test
 ```
   
-**Equivalent to**
+**Equivalently**  
 ```
-$ python nn_classifier.py [ref_name] [ref_directory] [ref_class_col] [test_name] [test_directory] -m [filename] -s -r -t
+$ python nn_classifier.py [ref_name] [ref_directory] [ref_class_col] [test_name] [test_directory] -m [marker_filename] -s -r -t
 ```
+
+Arguments in `[]` should be replaced with specific values.  
   
 **Example 1:** Using **cerebellum** as reference and **medulloblastoma** as test, **_with_** preprocessing needed, **_with_** reference marker genes provided, **_running_** `SHAP`
 ```
@@ -52,14 +55,14 @@ $ python nn_classifier.py bhaduri bhaduri CellType DIPG DIPG -s -r -t
 - nn_classifier.py accepts both **sparse** and **dense** scRNA-seq datasets as input.  
   
 **Filetype** and **filename**
-- nn_classifier.py accepts **.h5ad** file. **[ref_directory]** should contain **adata.h5ad** as reference. Same for **[test_directory]**.  
-- To be flexible, nn_classifier.py also accepts **.mtx** file. In this case, **[ref_directory]** should contain **genes.tsv**, **barcodes.tsv**, and **matrix.mtx** as reference. Same for **[test_directory]**.  
+- nn_classifier.py accepts **.h5ad** file. `[ref_directory]` should contain **adata.h5ad** as reference. Same for `[test_directory]`.  
+- To be flexible, nn_classifier.py also accepts **.mtx** file. In this case, `[ref_directory]` should contain **genes.tsv**, **barcodes.tsv**, and **matrix.mtx** as reference. Same for `[test_directory]`.  
   
 **Metadata**  
-- If **.mtx** is provided as reference, **[ref_directory]** should also contain **meta.tsv**, **meta.csv**, or **meta.xlsx** as metadata.
+- If **.mtx** is provided as reference, `[ref_directory]` should also contain **meta.tsv**, **meta.csv**, or **meta.xlsx** as metadata.
   
 _Optional_ **marker genes**  
-- If provided, **[ref_directory]** should contain it. Filetype should be **.tsv**, **.csv**, or **.xlsx**. The column name of gene symbols should be **Gene**.  
+- If provided, `[ref_directory]` should contain it. Filetype should be **.tsv**, **.csv**, or **.xlsx**. The column name of gene symbols should be **Gene**.  
   
 **Column separator**  
 - All **.tsv** files should use `\t` as the separator.  
