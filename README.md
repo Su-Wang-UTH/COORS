@@ -14,30 +14,40 @@ In the second step, we map scRNA-seq tumor cells to developing healthy brain cel
 ## Application
 ### nn_classifier.py
 This Python script loads one **reference** dataset and one **test** dataset both provided by the user.  
-To be flexible, the model _optionally_ preprocesses both datasets by `--normalize_ref` and `--normalize_test`, depending on whether the provided data have been preprocessed.  
+To be flexible, the model _optionally_ preprocesses both datasets by `--normalize_ref` and `--normalize_test`, which is up to the user depending on whether the provided data have already been preprocessed.  
 The reference cell-type **column** needs to be designated.  
 The reference **_marker_** genes can be _optionally_ provided.  
 Overlapped genes are selected and a neural network model is trained as a cell-type classifier based on the reference dataset.  
 Then the model predicts the cell-type probabilities and extracts features of the test dataset.  
-At last, the model is _optionally_ evaluated by `SHAP` analysis with samples from the test dataset.
+At last, the model is _optionally_ evaluated by `SHAP` analysis with samples from the test dataset.  
+
+**Usage**
 ```
 $ python nn_classifier.py [ref_name] [ref_directory] [ref_class_col] [test_name] [test_directory] --marker [filename] --shap --normalize_ref --normalize_test
 ```
-  
-Example 1: Using **cerebellum** as reference and **medulloblastoma** as test, **_with_** preprocessing needed, **_with_** reference marker genes provided, **_running_** `SHAP`
+
+**Equivalent to**
+```
+$ python nn_classifier.py [ref_name] [ref_directory] [ref_class_col] [test_name] [test_directory] -m [filename] -s -r -t
+```
+
+**Example 1:** Using **cerebellum** as reference and **medulloblastoma** as test, **_with_** preprocessing needed, **_with_** reference marker genes provided, **_running_** `SHAP`
 ```
 $ python nn_classifier.py cerebellum cerebellum CellType medulloblastoma medulloblastoma -m CellTypeMarker_DevelopingHumanData.xlsx -s -r -t
 ```
   
-Example 2: Using **codex** as reference and **glioma** as test, **_with_** preprocessing needed, **_with_** reference marker genes provided, **_not running_** `SHAP`
+**Example 2:** Using **codex** as reference and **glioma** as test, **_with_** preprocessing needed, **_with_** reference marker genes provided, **_not running_** `SHAP`
 ```
 $ python nn_classifier.py codex codex CellType glioma glioma -m codex_cluster_markers.xlsx -r -t
 ```
   
-Example 3: Using **bhaduri** as reference and **DIPG** as test, **_with_** preprocessing needed, **_without_** reference marker genes, **_running_** `SHAP`
+**Example 3:** Using **bhaduri** as reference and **DIPG** as test, **_with_** preprocessing needed, **_without_** reference marker genes, **_running_** `SHAP`
 ```
 $ python nn_classifier.py bhaduri bhaduri CellType DIPG DIPG -s -r -t
 ```
+
+**Note**  
+1. 
 
 ### age_predictor_fit.py
 
