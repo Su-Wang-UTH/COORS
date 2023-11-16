@@ -84,7 +84,6 @@ $ pip install keras==2.2.4
 
 Install other necessary packages:
 ```
-$ pip install pandas
 $ pip install scanpy
 $ pip install scipy
 $ pip install scikit-learn
