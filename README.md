@@ -75,7 +75,7 @@ _Optional_ **marker genes**
 
 
 ## Installation
-The algorithm is implemented in `Python 3.7.3`. 
+COORS is implemented in `Python 3.7.3`. 
 Install core packages with specific versions:
 ```
 $ pip install tensorflow==1.13.1
