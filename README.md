@@ -76,8 +76,16 @@ _Optional_ **marker genes**
 ```
 $ python age_predictor_fit.py [ref_name] [ref_directory] [ref_class_col] [ref_age_col] [test_name] [test_directory]
 ```
-
-
+  
+**Example:** Using **cerebellum** as reference and **medulloblastoma** as test  
+```
+$ python age_predictor_fit.py cerebellum cerebellum CellType age medulloblastoma medulloblastoma
+```
+  
+### Note  
+**Raw** input  
+- The input **reference** data should be **raw read counts** as it will be preprocessed separately grouped by `[ref_class_col]`.  
+  
 ### age_predictor_transform.py
 
 
