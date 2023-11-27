@@ -89,6 +89,9 @@ $ python age_predictor_fit.py cerebellum cerebellum CellType age medulloblastoma
 **Raw** input  
 - The input **reference** data should be **raw read counts** as it will be preprocessed separately grouped by `[ref_class_col]`.  
   
+**Saved** models  
+- The directory `[test_name]_[ref_name]_ageClassifier_ageRegressor` will be created to save models.  
+  
 ---  
 ### age_predictor_transform.py
   
