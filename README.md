@@ -12,7 +12,9 @@ The overall workflow of COORS consists of two steps. In the initial step, we tra
 In the second step, we map scRNA-seq tumor cells to developing healthy brain cells by using the pre-trained models. We predict the cell of origin for the testing dataset using the pre-trained cell of origin classifier. For each cell of origin, we further predict cell age using the corresponding pre-trained cell age regressor. Additionally, we conduct **SH**apley **A**dditive ex**P**lanations (**SHAP**) analysis to extract essential features from our machine-learning neural network models, identifying tumor-specific developmental-like gene markers for each cell type and age within our training datasets.
 
 ## Application
+### ----------------  
 ### nn_classifier.py
+### ----------------  
 - This Python script loads one **reference** dataset and one **test** dataset both provided by the user.  
 - The reference dataset `[ref_name]` should be in `[ref_directory]`. Same for the test dataset.  
 - The reference cell-type **column name** needs to be provided with `[ref_class_col]` (e.g., CellType).  
@@ -68,7 +70,9 @@ _Optional_ **marker genes**
 - All **.tsv** files should use `\t` as the separator.  
 - All **.csv** files should use `,` as the separator.  
   
+### --------------------  
 ### age_predictor_fit.py
+### --------------------  
 - This Python script trains a series of models for cell age regression.  
 - For each cell of origin in the **reference** dataset, one cell age regressor is trained and saved.  
   
@@ -86,9 +90,10 @@ $ python age_predictor_fit.py cerebellum cerebellum CellType age medulloblastoma
 **Raw** input  
 - The input **reference** data should be **raw read counts** as it will be preprocessed separately grouped by `[ref_class_col]`.  
   
+### --------------------------  
 ### age_predictor_transform.py
-
-
+### --------------------------  
+  
 ## Installation
 COORS is implemented in `Python 3.7.3`. 
 Install core packages with specific versions:
