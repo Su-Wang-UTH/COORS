@@ -68,6 +68,9 @@ _Optional_ **marker genes**
 - All **.tsv** files should use `\t` as the separator.  
 - All **.csv** files should use `,` as the separator.  
   
+**Saved** models  
+- The directory `[test_name]_[ref_name]_neuralNetwork` will be created to save models.  
+  
 ---
 ### age_predictor_fit.py
 - This Python script trains a series of models for cell age regression.  
