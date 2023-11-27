@@ -69,6 +69,13 @@ _Optional_ **marker genes**
 - All **.csv** files should use `,` as the separator.  
   
 ### age_predictor_fit.py
+- This Python script trains a series of models for cell age regression.  
+- For each cell of origin in the **reference** dataset, one cell age regressor is trained and saved.  
+  
+**Usage**
+```
+$ python age_predictor_fit.py [ref_name] [ref_directory] [ref_class_col] [ref_age_col] [test_name] [test_directory]
+```
 
 
 ### age_predictor_transform.py
