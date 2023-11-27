@@ -71,7 +71,9 @@ _Optional_ **marker genes**
 ---
 ### age_predictor_fit.py
 - This Python script trains a series of models for cell age regression.  
-- For each cell of origin in the **reference** dataset, one cell age regressor is trained and saved.  
+- For each cell of origin in the **reference** dataset, one cell age regressor is trained and saved.
+- The reference cell-age **column name** needs to be provided with `[ref_age_col]` (e.g., age).  
+- The **test** dataset is needed for gene set selection.  
   
 **Usage**
 ```
