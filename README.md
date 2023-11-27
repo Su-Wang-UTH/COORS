@@ -96,7 +96,19 @@ $ python age_predictor_fit.py cerebellum cerebellum CellType age medulloblastoma
 - The directory `[test_name]_[ref_name]_ageClassifier_ageRegressor` will be created to save models.  
   
 ---  
-### age_predictor_transform.py
+### age_predictor_transform.py  
+- This Python script loads the **test** dataset with **trained models** for cell age regression.  
+- Specific models are used for the **test** samples that are predicted as certain cell of origin.  
+  
+**Usage**  
+```
+$ python age_predictor_transform.py [ref_name] [test_name]
+```  
+  
+**Example:** Using **cerebellum** as reference and **medulloblastoma** as test  
+```
+$ python age_predictor_transform.py cerebellum medulloblastoma
+```  
   
 ## Installation
 COORS is implemented in `Python 3.7.3`. 
