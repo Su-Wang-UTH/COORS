@@ -111,18 +111,19 @@ $ python age_predictor_transform.py cerebellum medulloblastoma
 ```  
   
 ## Installation
-COORS is implemented in `Python 3.7.3`. 
+COORS is implemented in `Python 3.6`. 
 Install core packages with specific versions:
 ```
-$ pip install tensorflow==1.13.1
-$ pip install keras==2.2.4
+$ pip install numpy==1.19.5
+$ pip install tensorflow==2.4
 ```
 
 Install other necessary packages:
 ```
-$ pip install scanpy
+$ pip install pandas
 $ pip install scipy
 $ pip install scikit-learn
+$ pip install scanpy
 $ pip install joblib
 $ pip install shap
 $ pip install openpyxl
