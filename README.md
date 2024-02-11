@@ -115,7 +115,8 @@ COORS is implemented in `Python 3.6`.
 Install core packages with specific versions:
 ```
 $ pip install numpy==1.19.5
-$ pip install tensorflow==2.4
+$ pip install tensorflow==2.4.0
+$ pip install keras==2.2.4
 ```
 
 Install other necessary packages:
