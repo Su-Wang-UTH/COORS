@@ -111,7 +111,7 @@ $ python age_predictor_transform.py cerebellum medulloblastoma
 ```  
   
 ## Installation
-COORS is implemented in `Python 3.6`. 
+COORS is implemented in `Python 3.6.13`. 
 Install core packages with specific versions:
 ```
 $ pip install numpy==1.19.5
