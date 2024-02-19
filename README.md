@@ -126,5 +126,6 @@ $ pip install scikit-learn
 $ pip install scanpy
 $ pip install joblib
 $ pip install shap
+$ pip install ipython
 $ pip install openpyxl
 ```
